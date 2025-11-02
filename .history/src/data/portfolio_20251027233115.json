@@ -1,0 +1,119 @@
+{
+  "personalInfo": {
+    "name": "Alex Johnson",
+    "title": "Senior Full Stack Developer",
+    "tagline": "Crafting Digital Experiences",
+    "experience": "10",
+    "email": "alex.johnson@email.com",
+    "location": "San Francisco, CA",
+    "bio": "I transform ideas into elegant, scalable solutions. Specialized in building high-performance web applications that users love.",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    "github": "https://github.com/alexjohnson",
+    "linkedin": "https://linkedin.com/in/alexjohnson"
+  },
+  "skills": [
+    { "name": "React & Next.js", "level": 95 },
+    { "name": "TypeScript", "level": 90 },
+    { "name": "Node.js & Express", "level": 92 },
+    { "name": "Python & Django", "level": 85 },
+    { "name": "AWS & Cloud", "level": 88 },
+    { "name": "PostgreSQL & MongoDB", "level": 87 }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "AI-Powered Analytics Platform",
+      "description": "Enterprise analytics dashboard with real-time data processing, ML predictions, and beautiful visualizations serving 50K+ users.",
+      "tech": ["React", "Python", "TensorFlow", "AWS", "PostgreSQL"],
+      "link": "https://example.com",
+      "github": "https://github.com/example",
+      "featured": true,
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "id": 2,
+      "title": "E-Commerce Marketplace",
+      "description": "Full-stack marketplace platform with payment integration, real-time inventory, and admin dashboard handling $2M+ monthly transactions.",
+      "tech": ["Next.js", "Node.js", "Stripe", "Redis", "Docker"],
+      "link": "https://example.com",
+      "github": "https://github.com/example",
+      "featured": true,
+      "gradient": "from-blue-500 to-cyan-500"
+    },
+    {
+      "id": 3,
+      "title": "Mobile Banking App",
+      "description": "Secure financial app with biometric auth, instant transfers, and AI-powered spending insights. 4.8★ rating with 100K+ downloads.",
+      "tech": ["React Native", "Node.js", "MongoDB", "AWS"],
+      "link": "https://example.com",
+      "github": "https://github.com/example",
+      "featured": true,
+      "gradient": "from-orange-500 to-red-500"
+    },
+    {
+      "id": 4,
+      "title": "Social Media Dashboard",
+      "description": "Unified social media management tool with scheduling, analytics, and AI content suggestions.",
+      "tech": ["Vue.js", "Express", "MongoDB"],
+      "link": "https://example.com",
+      "github": "https://github.com/example",
+      "gradient": "from-green-500 to-emerald-500"
+    },
+    {
+      "id": 5,
+      "title": "Healthcare Portal",
+      "description": "HIPAA-compliant patient management system with appointment scheduling and telemedicine features.",
+      "tech": ["React", "Django", "PostgreSQL"],
+      "link": "https://example.com",
+      "github": "https://github.com/example",
+      "gradient": "from-indigo-500 to-purple-500"
+    },
+    {
+      "id": 6,
+      "title": "Real Estate Platform",
+      "description": "Property listing platform with virtual tours, mortgage calculator, and AI-powered recommendations.",
+      "tech": ["Next.js", "Node.js", "AWS", "Three.js"],
+      "link": "https://example.com",
+      "github": "https://github.com/example",
+      "gradient": "from-yellow-500 to-orange-500"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Tech Innovations Inc.",
+      "role": "Senior Full Stack Developer",
+      "period": "2020 - Present",
+      "highlights": [
+        "Led development of microservices architecture serving 1M+ users",
+        "Reduced infrastructure costs by 40% through optimization",
+        "Mentored 8 developers and established team coding standards"
+      ]
+    },
+    {
+      "company": "Digital Solutions Ltd.",
+      "role": "Full Stack Developer",
+      "period": "2017 - 2020",
+      "highlights": [
+        "Built 20+ production applications for enterprise clients",
+        "Improved application performance by 65% on average",
+        "Implemented automated testing reducing bugs by 80%"
+      ]
+    },
+    {
+      "company": "StartUp Ventures",
+      "role": "Junior Developer",
+      "period": "2015 - 2017",
+      "highlights": [
+        "Developed responsive web applications from concept to deployment",
+        "Contributed to 10+ open source projects",
+        "Learned modern development practices and agile methodologies"
+      ]
+    }
+  ],
+  "stats": [
+    { "label": "Years Experience", "value": "10+" },
+    { "label": "Projects Completed", "value": "50+" },
+    { "label": "Happy Clients", "value": "30+" },
+    { "label": "Code Commits", "value": "10K+" }
+  ]
+}

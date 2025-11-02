@@ -1,0 +1,101 @@
+{
+  "personalInfo": {
+    "name": "Ramlakhan Singh",
+    "title": "Full Stack Java Developer",
+    "tagline": "Building Scalable and Secure Web Applications",
+    "experience": "2",
+    "email": "ramlakhan.singh.11062001@gmail.com",
+    "location": "Noida, India",
+    "bio": "Full stack developer with hands-on experience in designing, developing, and optimizing enterprise-grade applications using Java, Spring Boot, React, and SQL. Passionate about delivering reliable and scalable digital solutions.",
+    "avatar": "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400&h=400&fit=crop",
+    "github": "https://github.com/ramlakhan1",
+    "linkedin": "https://linkedin.com/in/ramlakhan-singh"
+  },
+  "skills": [
+    { "name": "Java, Spring Boot & Hibernate", "level": 92 },
+    { "name": "React.js & JavaScript", "level": 88 },
+    { "name": "JSP & Struts 1.x", "level": 85 },
+    { "name": "SQL & PostgreSQL", "level": 90 },
+    { "name": "HTML, CSS & Bootstrap", "level": 87 },
+    { "name": "Git, Jira & CI/CD", "level": 84 }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Loan Management System",
+      "description": "Developed and maintained a modular loan application platform supporting end-to-end workflows, amortization schedules, and IRR calculations for enterprise banking clients.",
+      "tech": ["Java", "Spring Boot", "JSP", "SQL", "Hibernate"],
+      "link": "https://example.com/loan-management",
+      "github": "https://github.com/ramlakhansingh/loan-management",
+      "featured": true,
+      "gradient": "from-blue-500 to-cyan-500"
+    },
+    {
+      "id": 2,
+      "title": "Dynamic PDF Generation Engine",
+      "description": "Implemented a PDF generation framework using FreeMarker templates and XDocReport to dynamically generate structured reports and financial summaries in Struts 1.x applications.",
+      "tech": ["Java", "Struts 1.x", "FreeMarker", "XDocReport", "HTML/CSS"],
+      "link": "https://example.com/pdf-generator",
+      "github": "https://github.com/ramlakhansingh/pdf-generator",
+      "featured": true,
+      "gradient": "from-purple-500 to-pink-500"
+    },
+    {
+      "id": 3,
+      "title": "IRR & Amortization Schedule Calculator",
+      "description": "Built a financial computation module to calculate Internal Rate of Return (IRR), broken periods, moratoriums, and repayment schedules with charge-separate logic and validation reports.",
+      "tech": ["Java", "Spring Boot", "SQL", "React"],
+      "link": "https://example.com/irr-calculator",
+      "github": "https://github.com/ramlakhansingh/irr-calculator",
+      "featured": true,
+      "gradient": "from-green-500 to-emerald-500"
+    },
+    {
+      "id": 4,
+      "title": "HTML-to-PDF Converter (Production-Ready)",
+      "description": "Developed a headless browser-free PDF generation system replacing Chrome automation with efficient Java-based rendering for high-performance production environments.",
+      "tech": ["Java", "OpenPDF", "FreeMarker", "Spring Boot"],
+      "link": "https://example.com/html-to-pdf",
+      "github": "https://github.com/ramlakhansingh/html-to-pdf",
+      "gradient": "from-orange-500 to-red-500"
+    },
+    {
+      "id": 5,
+      "title": "React Loan Dashboard",
+      "description": "Built an interactive React dashboard to visualize loan statuses, repayments, and performance metrics integrated with backend REST APIs.",
+      "tech": ["React", "Spring Boot", "REST API", "PostgreSQL"],
+      "link": "https://example.com/loan-dashboard",
+      "github": "https://github.com/ramlakhansingh/loan-dashboard",
+      "gradient": "from-indigo-500 to-purple-500"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Nucleus Software",
+      "role": "Full Stack Developer",
+      "period": "2022 - Present",
+      "highlights": [
+        "Developed and enhanced financial modules including IRR, amortization, and repayment schedule engines.",
+        "Created reusable components for dynamic PDF generation using XDocReport and FreeMarker.",
+        "Optimized database queries and improved loan data processing efficiency by 30%.",
+        "Collaborated cross-functionally with QA and business teams to align with financial compliance and product standards."
+      ]
+    },
+    {
+      "company": "Freelance Projects",
+      "role": "Java Developer (Part-Time)",
+      "period": "2021 - 2022",
+      "highlights": [
+        "Delivered small-scale web applications using Spring Boot and MySQL for local clients.",
+        "Integrated REST APIs and payment modules with secure authentication using JWT and cookies.",
+        "Gained hands-on experience in full stack delivery and client interaction."
+      ]
+    }
+  ],
+  "stats": [
+    { "label": "Years Experience", "value": "2+" },
+    { "label": "Projects Completed", "value": "15+" },
+    { "label": "Modules Delivered", "value": "25+" },
+    { "label": "Commits & Contributions", "value": "3K+" }
+  ]
+}
