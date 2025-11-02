@@ -57,12 +57,12 @@ export default function Stats({ data }) {
   }, [isVisible, data]);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 border-y border-white/10 relative overflow-hidden">
+    <section ref={sectionRef} className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 border-y border-white/10 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-pulse"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {data.map((stat, idx) => {
             const numericValue = parseInt(stat.value.replace(/\D/g, '')) || 0;
             const suffix = stat.value.replace(/\d/g, '');
@@ -70,21 +70,21 @@ export default function Stats({ data }) {
             return (
               <div
                 key={idx}
-                className="text-center transform transition-all duration-500 hover:scale-110 group cursor-pointer"
+                className="text-center transform transition-all duration-500 hover:scale-110 active:scale-105 group cursor-pointer touch-manipulation"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                   transitionDelay: `${idx * 0.1}s`,
                 }}
               >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 group-hover:from-pink-400 group-hover:to-blue-400 transition-all">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:from-pink-400 group-hover:to-blue-400 transition-all">
                   {isVisible ? (counters[idx] || 0) + suffix : '0' + suffix}
                 </div>
-                <div className="text-gray-400 text-sm md:text-base group-hover:text-gray-300 transition-colors">
+                <div className="text-gray-400 text-xs sm:text-sm md:text-base group-hover:text-gray-300 transition-colors">
                   {stat.label}
                 </div>
                 {/* Animated underline */}
-                <div className="mt-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 w-0 group-hover:w-full transition-all duration-300 mx-auto"></div>
+                <div className="mt-1 sm:mt-2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 w-0 group-hover:w-full transition-all duration-300 mx-auto"></div>
               </div>
             );
           })}

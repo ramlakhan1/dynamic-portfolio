@@ -24,86 +24,82 @@ export default function Projects({ data }) {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-32 px-6">
+    <section id="projects" ref={sectionRef} className="py-20 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fadeInUp">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Featured Projects
             </span>
           </h2>
-          <p className="text-gray-400 text-lg">Some of my best work</p>
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg">Some of my best work</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {data.map((project, idx) => (
             <div
               key={project.id}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-500 overflow-hidden cursor-pointer transform hover:scale-105 hover:-translate-y-2"
+              className="group relative bg-gradient-to-br from-white/5 to-white/0 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-white/20 active:border-white/30 transition-all duration-500 overflow-hidden cursor-pointer transform hover:scale-105 active:scale-[1.02] hover:-translate-y-2 touch-manipulation"
               style={{
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible 
-                  ? 'translateY(0) rotateY(0deg)' 
-                  : 'translateY(30px) rotateY(10deg)',
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transitionDelay: `${idx * 0.1}s`,
-                transformStyle: 'preserve-3d',
               }}
             >
               {/* Animated Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
               
               {/* Glow Effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-50 blur transition-opacity duration-500"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-50 blur transition-opacity duration-500"></div>
               
               <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center group-hover:rotate-12 group-hover:scale-110 transition-all duration-300`}>
-                    <Code2 size={24} className="group-hover:rotate-[-12deg] transition-transform" />
+                <div className="flex items-start justify-between mb-3 sm:mb-4">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center group-hover:rotate-12 group-hover:scale-110 transition-all duration-300`}>
+                    <Code2 size={20} className="sm:w-6 sm:h-6 group-hover:rotate-[-12deg] transition-transform" />
                   </div>
                   {project.featured && (
-                    <div className="flex items-center gap-1 text-yellow-400 text-sm animate-pulse">
-                      <Star size={16} fill="currentColor" className="group-hover:rotate-180 transition-transform duration-500" />
-                      <span>Featured</span>
+                    <div className="flex items-center gap-1 text-yellow-400 text-xs sm:text-sm">
+                      <Star size={14} className="sm:w-4 sm:h-4 fill-current animate-pulse" />
+                      <span className="hidden sm:inline">Featured</span>
                     </div>
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3 group-hover:text-gray-300 transition-colors">
+                <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3 group-hover:text-gray-300 transition-colors">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                   {project.tech.map((tech, techIdx) => (
                     <span
                       key={techIdx}
-                      className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-300 group-hover:bg-white/10 group-hover:text-blue-400 transition-all duration-300 transform group-hover:scale-105"
-                      style={{ transitionDelay: `${techIdx * 0.05}s` }}
+                      className="px-2 sm:px-3 py-1 bg-white/5 rounded-full text-xs text-gray-300 group-hover:bg-white/10 group-hover:text-blue-400 transition-all duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-white/10 group-hover:border-blue-400/50 transition-colors">
+                <div className="flex items-center gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-white/10 group-hover:border-blue-400/50 transition-colors">
                   <a
                     href={project.link}
                     onClick={(e) => e.stopPropagation()}
-                    className="text-blue-400 hover:text-blue-300 transition-all text-sm flex items-center gap-1 group/link hover:gap-2"
+                    className="text-blue-400 hover:text-blue-300 active:text-blue-200 transition-all text-xs sm:text-sm flex items-center gap-1 group/link hover:gap-2 touch-manipulation"
                   >
-                    <ExternalLink size={16} className="group-hover/link:rotate-[-45deg] transition-transform" />
+                    <ExternalLink size={14} className="sm:w-4 sm:h-4 group-hover/link:rotate-[-45deg] transition-transform" />
                     Demo
                   </a>
                   <a
                     href={project.github}
                     onClick={(e) => e.stopPropagation()}
-                    className="text-gray-400 hover:text-gray-300 transition-all text-sm flex items-center gap-1 group/link hover:gap-2"
+                    className="text-gray-400 hover:text-gray-300 active:text-gray-200 transition-all text-xs sm:text-sm flex items-center gap-1 group/link hover:gap-2 touch-manipulation"
                   >
-                    <Github size={16} className="group-hover/link:rotate-12 transition-transform" />
+                    <Github size={14} className="sm:w-4 sm:h-4 group-hover/link:rotate-12 transition-transform" />
                     Code
                   </a>
                 </div>

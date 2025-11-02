@@ -165,95 +165,94 @@ export default function LeetCodeDashboard() {
   const totalSubmissions = stats.totalSubmissions || 0;
 
   return (
-    <section id="leetcode" className="py-32 px-6 relative overflow-hidden">
+    <section id="leetcode" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-orange-500/5 via-red-500/5 to-yellow-500/5"></div>
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-red-500/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <Code className="text-orange-400" size={40} />
-            <h2 className="text-5xl md:text-6xl font-bold">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <Code className="text-orange-400 w-8 h-8 sm:w-10 sm:h-10" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               <span className="bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 bg-clip-text text-transparent">
                 LeetCode Dashboard
               </span>
             </h2>
           </div>
-          <p className="text-xl text-gray-400 mb-4">My coding practice and achievements</p>
-          <div className="flex items-center justify-center gap-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-3 sm:mb-4 px-4">My coding practice and achievements</p>
+          <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
             <a
               href={`https://leetcode.com/u/${username}/`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors"
+              className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors text-xs sm:text-sm md:text-base touch-manipulation"
             >
-              View Full Profile <TrendingUp size={18} />
+              View Full Profile <TrendingUp size={14} className="sm:w-5 sm:h-5" />
             </a>
-            <button
-              onClick={fetchLeetCodeData}
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-300 transition-colors"
-            >
-              <RefreshCw size={18} />
-              Refresh
-            </button>
-            {stats.isManual && (
-              <span className="text-xs text-gray-500">(Manual Data)</span>
+            {stats && !stats.isManual && (
+              <button
+                onClick={fetchLeetCodeData}
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-300 transition-colors text-xs sm:text-sm md:text-base touch-manipulation"
+              >
+                <RefreshCw size={14} className="sm:w-5 sm:h-5" />
+                Refresh
+              </button>
             )}
           </div>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {/* Total Solved */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-orange-400/50 transition-all duration-300 group">
-            <div className="flex items-center justify-between mb-4">
-              <Trophy className="text-orange-400 group-hover:scale-110 transition-transform" size={32} />
-              <span className="text-3xl font-bold text-orange-400">{totalSolved}</span>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-orange-400/50 active:border-orange-400/30 transition-all duration-300 group touch-manipulation">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <Trophy className="text-orange-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-2xl sm:text-3xl font-bold text-orange-400">{totalSolved}</span>
             </div>
-            <h3 className="text-gray-300 font-semibold mb-1">Problems Solved</h3>
-            <p className="text-gray-500 text-sm">Total accepted solutions</p>
+            <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Problems Solved</h3>
+            <p className="text-gray-500 text-xs">Total accepted</p>
           </div>
 
           {/* Acceptance Rate */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-green-400/50 transition-all duration-300 group">
-            <div className="flex items-center justify-between mb-4">
-              <Target className="text-green-400 group-hover:scale-110 transition-transform" size={32} />
-              <span className="text-3xl font-bold text-green-400">{acceptanceRate}%</span>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-green-400/50 active:border-green-400/30 transition-all duration-300 group touch-manipulation">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <Target className="text-green-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-2xl sm:text-3xl font-bold text-green-400">{acceptanceRate}%</span>
             </div>
-            <h3 className="text-gray-300 font-semibold mb-1">Acceptance Rate</h3>
-            <p className="text-gray-500 text-sm">Success rate</p>
+            <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Acceptance Rate</h3>
+            <p className="text-gray-500 text-xs">Success rate</p>
           </div>
 
           {/* Ranking */}
           {ranking > 0 && (
-            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group">
-              <div className="flex items-center justify-between mb-4">
-                <Award className="text-purple-400 group-hover:scale-110 transition-transform" size={32} />
-                <span className="text-3xl font-bold text-purple-400">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-purple-400/50 active:border-purple-400/30 transition-all duration-300 group touch-manipulation">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <Award className="text-purple-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+                <span className="text-2xl sm:text-3xl font-bold text-purple-400">
                   {ranking > 1000 ? `${(ranking / 1000).toFixed(1)}K` : ranking}
                 </span>
               </div>
-              <h3 className="text-gray-300 font-semibold mb-1">Global Ranking</h3>
-              <p className="text-gray-500 text-sm">Among all users</p>
+              <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Global Ranking</h3>
+              <p className="text-gray-500 text-xs">Among all users</p>
             </div>
           )}
 
           {/* Total Submissions */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-400/50 transition-all duration-300 group">
-            <div className="flex items-center justify-between mb-4">
-              <CheckCircle className="text-blue-400 group-hover:scale-110 transition-transform" size={32} />
-              <span className="text-3xl font-bold text-blue-400">{totalSubmissions}</span>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-blue-400/50 active:border-blue-400/30 transition-all duration-300 group touch-manipulation">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <CheckCircle className="text-blue-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-2xl sm:text-3xl font-bold text-blue-400">{totalSubmissions}</span>
             </div>
-            <h3 className="text-gray-300 font-semibold mb-1">Total Submissions</h3>
-            <p className="text-gray-500 text-sm">All attempts</p>
+            <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Total Submissions</h3>
+            <p className="text-gray-500 text-xs">All attempts</p>
           </div>
         </div>
 
-        {/* Difficulty Breakdown */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* Difficulty Breakdown - Mobile Optimized */}
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {[
             { difficulty: 'Easy', count: easySolved, color: 'green' },
             { difficulty: 'Medium', count: mediumSolved, color: 'yellow' },
@@ -279,10 +278,10 @@ export default function LeetCodeDashboard() {
             return (
               <div
                 key={idx}
-                className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-opacity-50 transition-all duration-300 group"
+                className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-opacity-50 transition-all duration-300 group"
                 style={{ borderColor: borderColors[item.color] }}
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <span className={`text-lg font-bold ${textColors[item.color]}`}>
                     {item.difficulty}
                   </span>
@@ -311,9 +310,9 @@ export default function LeetCodeDashboard() {
             href={`https://leetcode.com/u/${username}/`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-full font-semibold text-sm sm:text-base hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300 touch-manipulation"
           >
-            <Code size={20} />
+            <Code size={18} className="sm:w-5 sm:h-5" />
             View Full LeetCode Profile
           </a>
         </div>

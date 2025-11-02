@@ -137,124 +137,124 @@ export default function GitHubDashboard() {
   }
 
   return (
-    <section id="github" className="py-32 px-6 relative overflow-hidden">
+    <section id="github" className="py-20 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 via-pink-500/5 to-blue-500/5"></div>
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <Github className="text-purple-400" size={40} />
-            <h2 className="text-5xl md:text-6xl font-bold">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <Github className="text-purple-400 w-8 h-8 sm:w-10 sm:h-10" />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
                 GitHub Dashboard
               </span>
             </h2>
           </div>
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-4 px-4">
             <img
               src={profile.avatar_url}
               alt={profile.name || username}
-              className="w-16 h-16 rounded-full border-2 border-purple-400"
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-purple-400"
             />
             <div className="text-left">
-              <h3 className="text-xl font-bold text-gray-200">{profile.name || username}</h3>
-              <p className="text-gray-400">@{profile.login}</p>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-200">{profile.name || username}</h3>
+              <p className="text-sm sm:text-base text-gray-400">@{profile.login}</p>
             </div>
           </div>
           {profile.bio && (
-            <p className="text-gray-400 mb-4 max-w-2xl mx-auto">{profile.bio}</p>
+            <p className="text-gray-400 mb-3 sm:mb-4 max-w-2xl mx-auto text-sm sm:text-base px-4">{profile.bio}</p>
           )}
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
             <a
               href={profile.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+              className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-xs sm:text-sm md:text-base touch-manipulation"
             >
-              View Full Profile <TrendingUp size={18} />
+              View Full Profile <TrendingUp size={14} className="sm:w-5 sm:h-5" />
             </a>
             <button
               onClick={fetchGitHubData}
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-300 transition-colors"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-300 transition-colors text-xs sm:text-sm md:text-base touch-manipulation"
             >
-              <RefreshCw size={18} />
+              <RefreshCw size={14} className="sm:w-5 sm:h-5" />
               Refresh
             </button>
           </div>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {/* Public Repositories */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 group">
-            <div className="flex items-center justify-between mb-4">
-              <Folder className="text-purple-400 group-hover:scale-110 transition-transform" size={32} />
-              <span className="text-3xl font-bold text-purple-400">{profile.public_repos}</span>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-purple-400/50 active:border-purple-400/30 transition-all duration-300 group touch-manipulation">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <Folder className="text-purple-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-2xl sm:text-3xl font-bold text-purple-400">{profile.public_repos}</span>
             </div>
-            <h3 className="text-gray-300 font-semibold mb-1">Public Repositories</h3>
-            <p className="text-gray-500 text-sm">Total repos</p>
+            <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Public Repositories</h3>
+            <p className="text-gray-500 text-xs">Total repos</p>
           </div>
 
           {/* Followers */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-pink-400/50 transition-all duration-300 group">
-            <div className="flex items-center justify-between mb-4">
-              <Users className="text-pink-400 group-hover:scale-110 transition-transform" size={32} />
-              <span className="text-3xl font-bold text-pink-400">{profile.followers}</span>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-pink-400/50 active:border-pink-400/30 transition-all duration-300 group touch-manipulation">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <Users className="text-pink-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-2xl sm:text-3xl font-bold text-pink-400">{profile.followers}</span>
             </div>
-            <h3 className="text-gray-300 font-semibold mb-1">Followers</h3>
-            <p className="text-gray-500 text-sm">GitHub followers</p>
+            <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Followers</h3>
+            <p className="text-gray-500 text-xs">GitHub followers</p>
           </div>
 
           {/* Following */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-400/50 transition-all duration-300 group">
-            <div className="flex items-center justify-between mb-4">
-              <Users className="text-blue-400 group-hover:scale-110 transition-transform" size={32} />
-              <span className="text-3xl font-bold text-blue-400">{profile.following}</span>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-blue-400/50 active:border-blue-400/30 transition-all duration-300 group touch-manipulation">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <Users className="text-blue-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="text-2xl sm:text-3xl font-bold text-blue-400">{profile.following}</span>
             </div>
-            <h3 className="text-gray-300 font-semibold mb-1">Following</h3>
-            <p className="text-gray-500 text-sm">Following users</p>
+            <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Following</h3>
+            <p className="text-gray-500 text-xs">Following users</p>
           </div>
 
           {/* Total Stars */}
           {contributionStats && (
-            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 hover:border-yellow-400/50 transition-all duration-300 group">
-              <div className="flex items-center justify-between mb-4">
-                <Star className="text-yellow-400 group-hover:scale-110 transition-transform" size={32} />
-                <span className="text-3xl font-bold text-yellow-400">{contributionStats.totalStars}</span>
+            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-yellow-400/50 active:border-yellow-400/30 transition-all duration-300 group touch-manipulation">
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <Star className="text-yellow-400 group-hover:scale-110 transition-transform w-6 h-6 sm:w-8 sm:h-8" />
+                <span className="text-2xl sm:text-3xl font-bold text-yellow-400">{contributionStats.totalStars}</span>
               </div>
-              <h3 className="text-gray-300 font-semibold mb-1">Total Stars</h3>
-              <p className="text-gray-500 text-sm">Stars received</p>
+              <h3 className="text-gray-300 font-semibold mb-1 text-xs sm:text-sm">Total Stars</h3>
+              <p className="text-gray-500 text-xs">Stars received</p>
             </div>
           )}
         </div>
 
         {/* Additional Stats */}
         {contributionStats && (
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-2">
-                <GitBranch className="text-green-400" size={24} />
-                <span className="text-gray-300 font-semibold">Total Forks</span>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                <GitBranch className="text-green-400 w-5 h-5 sm:w-6 sm:h-6" />
+                <span className="text-gray-300 font-semibold text-sm sm:text-base">Total Forks</span>
               </div>
-              <p className="text-3xl font-bold text-green-400">{contributionStats.totalForks}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-green-400">{contributionStats.totalForks}</p>
             </div>
-            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-2">
-                <Code className="text-orange-400" size={24} />
-                <span className="text-gray-300 font-semibold">Code Size</span>
+            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                <Code className="text-orange-400 w-5 h-5 sm:w-6 sm:h-6" />
+                <span className="text-gray-300 font-semibold text-sm sm:text-base">Code Size</span>
               </div>
-              <p className="text-3xl font-bold text-orange-400">{contributionStats.totalSize} MB</p>
+              <p className="text-2xl sm:text-3xl font-bold text-orange-400">{contributionStats.totalSize} MB</p>
             </div>
-            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-2">
-                <Calendar className="text-blue-400" size={24} />
-                <span className="text-gray-300 font-semibold">Member Since</span>
+            <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 sm:col-span-2 md:col-span-1">
+              <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                <Calendar className="text-blue-400 w-5 h-5 sm:w-6 sm:h-6" />
+                <span className="text-gray-300 font-semibold text-sm sm:text-base">Member Since</span>
               </div>
-              <p className="text-lg font-bold text-blue-400">
+              <p className="text-base sm:text-lg font-bold text-blue-400">
                 {new Date(profile.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
               </p>
             </div>
@@ -263,12 +263,12 @@ export default function GitHubDashboard() {
 
         {/* Top Languages */}
         {contributionStats && contributionStats.languages.length > 0 && (
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 mb-12">
-            <div className="flex items-center gap-2 mb-6">
-              <Code className="text-purple-400" size={24} />
-              <h3 className="text-2xl font-bold text-gray-200">Top Languages</h3>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-8 sm:mb-12">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
+              <Code className="text-purple-400 w-5 h-5 sm:w-6 sm:h-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-200">Top Languages</h3>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {contributionStats.languages.map((lang, idx) => {
                 const percentage = (lang.count / contributionStats.totalRepos) * 100;
                 const colors = [
@@ -282,13 +282,13 @@ export default function GitHubDashboard() {
                 return (
                   <div
                     key={idx}
-                    className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-purple-400/50 transition-all group"
+                    className="bg-white/5 border border-white/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:border-purple-400/50 active:border-purple-400/30 transition-all group touch-manipulation"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-gray-300 font-semibold">{lang.language}</span>
-                      <span className="text-purple-400 font-bold">{lang.count}</span>
+                      <span className="text-gray-300 font-semibold text-sm sm:text-base break-words">{lang.language}</span>
+                      <span className="text-purple-400 font-bold text-sm sm:text-base">{lang.count}</span>
                     </div>
-                    <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-1.5 sm:h-2 bg-white/5 rounded-full overflow-hidden">
                       <div
                         className={`h-full bg-gradient-to-r ${colors[idx % colors.length]} rounded-full transition-all duration-1000`}
                         style={{ width: `${percentage}%` }}
@@ -304,42 +304,42 @@ export default function GitHubDashboard() {
 
         {/* Featured Repositories */}
         {repos.length > 0 && (
-          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 mb-8">
-            <div className="flex items-center gap-2 mb-6">
-              <Star className="text-yellow-400" size={24} />
-              <h3 className="text-2xl font-bold text-gray-200">Featured Repositories</h3>
+          <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
+              <Star className="text-yellow-400 w-5 h-5 sm:w-6 sm:h-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-200">Featured Repositories</h3>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {repos.map((repo) => (
                 <a
                   key={repo.id}
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-purple-400/50 hover:bg-white/10 transition-all group"
+                  className="bg-white/5 border border-white/10 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:border-purple-400/50 active:border-purple-400/30 hover:bg-white/10 active:bg-white/5 transition-all group touch-manipulation"
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="text-lg font-bold text-gray-200 group-hover:text-purple-400 transition-colors">
+                    <h4 className="text-base sm:text-lg font-bold text-gray-200 group-hover:text-purple-400 transition-colors flex-1 break-words pr-2">
                       {repo.name}
                     </h4>
-                    <Github size={18} className="text-gray-400 group-hover:text-purple-400 transition-colors" />
+                    <Github size={16} className="sm:w-5 sm:h-5 text-gray-400 group-hover:text-purple-400 transition-colors flex-shrink-0" />
                   </div>
                   {repo.description && (
-                    <p className="text-gray-400 text-sm mb-3 line-clamp-2">{repo.description}</p>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-2 sm:mb-3 line-clamp-2">{repo.description}</p>
                   )}
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <div className="flex items-center gap-3 sm:gap-4 text-xs text-gray-500 flex-wrap">
                     {repo.language && (
                       <span className="flex items-center gap-1">
-                        <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-                        {repo.language}
+                        <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-purple-400"></div>
+                        <span className="text-xs">{repo.language}</span>
                       </span>
                     )}
                     <span className="flex items-center gap-1">
-                      <Star size={14} />
+                      <Star size={12} className="sm:w-4 sm:h-4" />
                       {repo.stargazers_count}
                     </span>
                     <span className="flex items-center gap-1">
-                      <GitBranch size={14} />
+                      <GitBranch size={12} className="sm:w-4 sm:h-4" />
                       {repo.forks_count}
                     </span>
                   </div>
@@ -360,9 +360,9 @@ export default function GitHubDashboard() {
             href={profile.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full font-semibold hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full font-semibold text-sm sm:text-base hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 touch-manipulation"
           >
-            <Github size={20} />
+            <Github size={18} className="sm:w-5 sm:h-5" />
             View Full GitHub Profile
           </a>
         </div>

@@ -36,7 +36,7 @@ export default function Hero({ data }) {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-16 sm:pt-20 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10"></div>
       <div className="absolute inset-0">
@@ -65,9 +65,9 @@ export default function Hero({ data }) {
       ))}
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="text-center space-y-8 animate-fadeInUp">
+        <div className="text-center space-y-6 sm:space-y-8 animate-fadeInUp">
           <div className="inline-block">
-            <div className="relative w-32 h-32 mx-auto mb-6 group cursor-pointer">
+            <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 group cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full animate-spin-slow blur group-hover:blur-md transition-all"></div>
               <img
                 src={data.avatar}
@@ -79,10 +79,10 @@ export default function Hero({ data }) {
           </div>
 
           <div>
-            <p className="text-blue-400 font-medium mb-4 tracking-wider uppercase text-sm h-6">
+            <p className="text-blue-400 font-medium mb-3 sm:mb-4 tracking-wider uppercase text-xs sm:text-sm h-5 sm:h-6">
               {typedText}<span className="animate-blink">|</span>
             </p>
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 leading-tight px-2">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
                 {data.name.split('').map((char, i) => (
                   <span
@@ -95,35 +95,35 @@ export default function Hero({ data }) {
                 ))}
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl text-gray-300 mb-6 animate-slideUp" style={{ animationDelay: '0.3s' }}>
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 sm:mb-6 animate-slideUp px-4" style={{ animationDelay: '0.3s' }}>
               {data.title}
             </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8 animate-slideUp" style={{ animationDelay: '0.5s' }}>
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-6 sm:mb-8 px-4 animate-slideUp" style={{ animationDelay: '0.5s' }}>
               {data.bio}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 animate-slideUp" style={{ animationDelay: '0.7s' }}>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 animate-slideUp px-4" style={{ animationDelay: '0.7s' }}>
             <button
               onClick={() => scrollToSection('projects')}
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 inline-flex items-center gap-2 group relative overflow-hidden"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold text-sm sm:text-base hover:scale-110 active:scale-95 hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 inline-flex items-center gap-2 group relative overflow-hidden touch-manipulation"
             >
               <span className="relative z-10 flex items-center gap-2">
                 View My Work
-                <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform sm:w-5 sm:h-5" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 border-2 border-white/20 rounded-full font-semibold hover:bg-white/10 hover:border-blue-400 hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/20 rounded-full font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-blue-400 hover:scale-105 active:scale-95 transition-all duration-300 relative overflow-hidden group touch-manipulation"
             >
               <span className="relative z-10">Get In Touch</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 scale-0 group-hover:scale-100 transition-transform origin-left"></div>
             </button>
           </div>
 
-          <div className="flex items-center justify-center gap-6 pt-8 animate-slideUp" style={{ animationDelay: '0.9s' }}>
+          <div className="flex items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 animate-slideUp" style={{ animationDelay: '0.9s' }}>
             {[
               { icon: Github, href: data.github, color: 'hover:text-gray-300' },
               { icon: Linkedin, href: data.linkedin, color: 'hover:text-blue-400' },
@@ -132,9 +132,11 @@ export default function Hero({ data }) {
               <a
                 key={idx}
                 href={href}
-                className={`w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 hover:border-blue-400 hover:scale-125 hover:-translate-y-1 transition-all duration-300 group ${color}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-10 h-10 sm:w-12 sm:h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-white/10 hover:border-blue-400 hover:scale-125 active:scale-110 hover:-translate-y-1 transition-all duration-300 group touch-manipulation ${color}`}
               >
-                <Icon size={20} className="group-hover:rotate-12 transition-transform" />
+                <Icon size={18} className="group-hover:rotate-12 transition-transform sm:w-5 sm:h-5" />
               </a>
             ))}
           </div>
